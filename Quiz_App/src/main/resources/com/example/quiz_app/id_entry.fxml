@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox spacing="20" alignment="CENTER" xmlns="http://javafx.com/javafx/20"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.quiz_app.IDController">
+
+    <Label text="আপনার আইডি লিখুন:" style="-fx-font-size: 18px;"/>
+    <TextField fx:id="txtID" promptText="Enter your ID"/>
+    <Button text="Start Quiz" onAction="#handleStart"/>
+    <Label fx:id="lblError" textFill="red"/>
+</VBox>
