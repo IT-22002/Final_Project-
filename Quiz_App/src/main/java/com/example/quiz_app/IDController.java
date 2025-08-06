@@ -20,7 +20,7 @@ public class IDController {
             return;
         }
 
-        // Check last digit
+       
         char lastChar = id.charAt(id.length() - 1);
         if (lastChar != '2') {
             lblError.setText("আপনার আইডির শেষ সংখ্যা 2 হতে হবে!");
@@ -38,3 +38,4 @@ public class IDController {
         }
     }
 }
+
