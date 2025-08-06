@@ -38,7 +38,7 @@ public class GameController {
         startTimer();
     }
 
-    /** ডাটাবেজ থেকে প্রশ্ন লোড করা */
+    
     private void loadQuestions() {
         questions = new ArrayList<>();
         try {
@@ -69,7 +69,7 @@ public class GameController {
         }
     }
 
-    /** প্রশ্ন স্ক্রিনে দেখানো */
+    
     private void showQuestion() {
         if (currentIndex >= questions.size()) {
             endQuiz();
@@ -87,7 +87,7 @@ public class GameController {
         resetTimer();
     }
 
-    /** পরবর্তী প্রশ্ন */
+    
     @FXML
     private void handleNext() {
         RadioButton selected = (RadioButton) options.getSelectedToggle();
@@ -114,7 +114,7 @@ public class GameController {
         showQuestion();
     }
 
-    /** Exit বাটন */
+    
     @FXML
     private void handleExit() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -126,7 +126,7 @@ public class GameController {
         Platform.exit();
     }
 
-    /** Restart বাটন */
+
     @FXML
     private void handleRestart() {
         stopTimer();
@@ -137,11 +137,11 @@ public class GameController {
         startTimer();
     }
 
-    /** কুইজ শেষ হলে */
+  
     private void endQuiz() {
         stopTimer();
 
-        // ইউজারের নাম ইনপুট নাও
+      
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("কুইজ শেষ");
         dialog.setHeaderText("আপনার স্কোর: " + score + "/" + questions.size());
@@ -160,7 +160,6 @@ public class GameController {
         });
     }
 
-    /** নাম + স্কোর ডাটাবেজে সেভ করা */
     private void saveOrUpdatePlayerScore(String playerName, int score) {
         String url = "jdbc:mysql://localhost:3306/quizdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
         String user = "Atif";
@@ -193,7 +192,7 @@ public class GameController {
         }
     }
 
-    /** টাইমার চালু করা */
+
     private void startTimer() {
         stopTimer();
         timer = new Timer();
